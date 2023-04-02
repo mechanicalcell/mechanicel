@@ -17,7 +17,7 @@
 
 .App-body {
   background-color: #fffff0;
-  min-height: 78vh;
+  min-height: 86vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,4 +68,8 @@
   flex-direction: column; */
   margin-top: 23px;
   
+}
+
+.App-image-swap {
+  margin-bottom: 6px;
 }

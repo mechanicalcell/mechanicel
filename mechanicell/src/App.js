@@ -16,7 +16,7 @@ const ImageSwap = (number) => {
   const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
 
   return (
-    <div className='ImageSwap'>
+    <div className='App-image-swap'>
       <img src={images[`m${number.number}.png`]} /> 
     </div>
   )
@@ -63,6 +63,7 @@ function App() {
       </header>   
       <div className="App-body">
         <ImageSwap number={number} />
+        <img src={images[`mm.png`]} />
       </div>
     </div>
   );
