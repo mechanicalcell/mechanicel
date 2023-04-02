@@ -45,12 +45,21 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="App-button1" onMouseDown={mouseDown} onMouseUp={mouseUp}>
-          <img src={images[`b${button}.png`]} /> 
-        </div> 
-        <div className="App-button2" onClick={onClick} >
-          <img src={images[`b${number1}.png`]} /> 
-        </div> 
+        <div className="App-box">
+        <img src={images[`FP.png`]} />
+         
+        <div className="App-btn12">
+          <div className="App-button1" onMouseDown={mouseDown} onMouseUp={mouseUp}>
+            <img src={images[`b${button}.png`]} /> 
+          </div> 
+          <div className="App-button2" onClick={onClick} >
+            <img src={images[`b${number1}.png`]} /> 
+          </div> 
+        </div>
+        </div>
+        <div className="App-mask-box">
+        <img src={images[`a1.png`]} />
+        </div>
       </header>   
       <div className="App-body">
         <ImageSwap number={number} />
