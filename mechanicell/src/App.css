@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #fffff0;
 }
 
 .App-header {
@@ -73,3 +74,60 @@
 .App-image-swap {
   margin-bottom: 6px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+.content {
+  
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px dashed #4C4CFF;   */
+}
+  
+.navigation_box {
+ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fffff0;
+  /* border: 1px dashed #4C4CFF; */
+}
+  
+.navigation_link {
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  background: #fffff0;
+  /* border: 2px dashed #27272b; */
+  /* box-sizing: border-box; */
+  
+  
+}
+
+
+
+.text_container {
+  
+  width: 60px;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffff0;
+  /* border: 1px dashed #c21440; */
+}
+  
