@@ -78,7 +78,7 @@ function App() {
 
 
 
-<!--
+/*
             <nav className="content">
           <div className="navigation_box">
             <nav>
@@ -103,7 +103,7 @@ function App() {
           </div>
         </nav> 
 
--->
+*/
        
 
 
