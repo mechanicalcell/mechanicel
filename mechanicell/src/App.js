@@ -78,9 +78,8 @@ function App() {
 
 
 
-
-    
-        <nav className="content">
+<!--
+            <nav className="content">
           <div className="navigation_box">
             <nav>
             <NavLink to='/' 
@@ -104,7 +103,7 @@ function App() {
           </div>
         </nav> 
 
-
+-->
        
 
 
