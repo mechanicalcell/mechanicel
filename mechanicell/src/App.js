@@ -77,40 +77,6 @@ function App() {
       </div>
 
 
-
-/*
-            <nav className="content">
-          <div className="navigation_box">
-            <nav>
-            <NavLink to='/' 
-                     className="navigation_link"
-                     activeClassName="navigation_link"
-                     style={{ textDecoration: 'none' }}>  
-                     
-              <p className="text_container"><span style={{fontSize: "13px", color: "#8c755e"}}>Home</span></p>
-            </NavLink>
-            </nav>
-            <nav>
-            <Link to='/about' className="navigation_link" style={{ textDecoration: 'none' }}>  
-              <p className="text_container"><span style={{fontSize: "13px", color: "#8c755e"}}>About</span></p>
-            </Link>
-            </nav>
-            <nav>
-            <Link to='/contact' className="navigation_link" style={{ textDecoration: 'none' }}>  
-              <p className="text_container"><span style={{fontSize: "13px", color: "#8c755e"}}>Contact</span></p>
-            </Link>
-            </nav>
-          </div>
-        </nav> 
-
-*/
-       
-
-
-
-
-
-
       <div><p style={{textAlign: "center", fontFamily: "'Open Sans', sans-serif"}}><span style={{fontSize: "13px", color: "#8c755e"}}>&copy; &nbsp;2016 MechanicEl. &nbsp;All rights reserved.</span></p></div>
 
     </div>
