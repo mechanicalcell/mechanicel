@@ -8,8 +8,19 @@ h1 {
   margin: 0;
 }
 
+#copy:before { content: '\A9'; }
+
+#h1m1:before { content: '\A0'; }
+
+body {
+  user-select: none;
+  
+} 
+
 .cEl {
   color: color(srgb 0.4522 0.5938 0.7756);
+  user-select: none;
+  cursor: default;
 }
 
 .Mechanicel {
@@ -18,6 +29,8 @@ h1 {
   align-items: center;  
   paddin: 0;
   margin: 0;
+  user-select: none;
+  cursor: default;
 }
 
 .fp {
@@ -27,6 +40,8 @@ h1 {
   color: #5e5e5e;
   text-align: center;
   margin-bottom: 10px;
+  user-select: none;
+  cursor: default;
   
 }
 
@@ -35,8 +50,19 @@ h1 {
   background-color: #ffffff;
 }
 
+.App-language {
+  font-weight: 100;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+  width: 20px;
+
+  
+}
+
 .App-header {
   background-color: #ffffff;
+  
   min-height: 16vh;
   max-height: 18vh;
   display: flex;
@@ -44,8 +70,8 @@ h1 {
   align-items: center;
   justify-content: center;
   /*font-size: calc(10px + 2vmin);
-  color: white;
-  /* border: 1px solid rgb(163, 46, 46); */
+  color: white;*/
+  
 
 }
 
@@ -85,8 +111,8 @@ h1 {
   display: flex;
   flex-direction: row;
   
-  /* margin-top: 5px;
-  margin-left: 9px;*/
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .App-box {
@@ -121,7 +147,7 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #fffff0;
+  background: #fff;
   /* border: 1px dashed #4C4CFF; */
 }
   
@@ -139,7 +165,8 @@ h1 {
 }
 
 .App-image-swap {
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
+  
 }
 
 .text_container {

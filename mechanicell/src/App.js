@@ -38,6 +38,28 @@ function App() {
   const mouseDown2 = () => { setNumber2(2);  }
   const mouseUp2 = () => setNumber2(1)
   const onClick = () => { number1 == 9 ? setNumber1(10) : setNumber1(9);                }
+  
+  const copyRU = ' 2016 МеханиКл. Все права защищены.';
+  const copyEN = ' 2016 MechanicEl. All rights reserved.';
+  const copy = copyRU;
+
+  const cL = () => { document.getElementById('cL').innerText === 'En' ?  cFPRU() : cFPEN() }
+  const cFPEN = () => { 
+    document.getElementById('cL').innerText = 'En';
+    document.getElementById('filmstrip').innerText = 'ДИАФИЛЬМ';
+    document.getElementById('copy').innerText = copyRU;
+    document.getElementById("h1m1").innerText = ' Механи';
+    document.getElementById("cEl").innerText = 'Кл';    
+ }
+  const cFPRU = () => { 
+    document.getElementById('cL').innerText = 'Ру';
+    document.getElementById('filmstrip').innerText = 'FILMSTRIP';
+    document.getElementById('copy').innerText = copyEN;
+    document.getElementById("h1m1").innerText = ' Mechani';
+    document.getElementById("cEl").innerText = 'cEl';   
+ 
+ }
+  
 
   useEffect(() => { if (number1 == 10) {
     const interval = setInterval(() => { 
@@ -52,7 +74,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="App-box">
-        <span className="fp">FILMSTRIP</span> 
+        <span id="filmstrip" className="fp">ДИАФИЛЬМ</span> 
         <div className="App-btn12">
           <div className="App-button1" onMouseDown={mouseDown} onMouseUp={mouseUp}>
             <img src={images[`b${button}.png`]} /> 
@@ -62,6 +84,11 @@ function App() {
           </div> 
         </div>
         </div>
+
+        <div className="App-language" style={{margin: "10px"}} onClick={cL} >
+          <span id="cL">En</span> 
+        </div> 
+       
         <Link to='/' className="navigation_link">
         <div className="App-mask-box" onMouseDown={mouseDown2} onMouseUp={mouseUp2}>
         
@@ -74,12 +101,12 @@ function App() {
         <ImageSwap number={number} />
         <div className="Mechanicel">
           <p style={{padding: 0, margin: 0}}><img src={images[`mm${number2}.png`]} /></p>
-          <h1><span>&nbsp;Mechani</span><span className="cEl">cEl</span></h1>
+          <h1><span id="h1m1">&nbsp;Механи</span><span id="cEl" className="cEl">Кл</span></h1>
         </div>
       </div>
 
 
-      <div><p style={{textAlign: "center", fontFamily: "'Open Sans', sans-serif"}}><span style={{fontSize: "13px", color: "#5e5e5e"}}>&copy;&nbsp;&nbsp;2016&nbsp;MechanicEl.&nbsp;All&nbsp;rights&nbsp;reserved.</span></p></div>
+      <div><p style={{textAlign: "center", fontFamily: "'Open Sans', sans-serif"}}><span id="copy" style={{fontSize: "13px", color: "#5e5e5e", cursor: "default"}}>{copy}</span></p></div>
 
     </div>
     </>
