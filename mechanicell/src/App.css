@@ -18,7 +18,7 @@
 
 .App-body {
   background-color: #fffff0;
-  min-height: 86vh;
+  min-height: 76vh;
   display: flex;
   flex-direction: column;
   align-items: center;
