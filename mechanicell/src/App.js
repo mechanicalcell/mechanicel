@@ -19,7 +19,7 @@ const ImageSwap = (number) => {
 
   return (
     <div className='App-image-swap'>
-      <img src={images[`m${number.number}.png`]} /> 
+      <img src={images[`m${number.number}.png`]} draggable="false" /> 
     </div>
   )
 
@@ -77,10 +77,10 @@ function App() {
         <span id="filmstrip" className="fp">ДИАФИЛЬМ</span> 
         <div className="App-btn12">
           <div className="App-button1" onMouseDown={mouseDown} onMouseUp={mouseUp}>
-            <img src={images[`b${button}.png`]} /> 
+            <img src={images[`b${button}.png`]} draggable="false" /> 
           </div> 
           <div className="App-button2" onClick={onClick} >
-            <img src={images[`b${number1}.png`]} /> 
+            <img src={images[`b${number1}.png`]} draggable="false" /> 
           </div> 
         </div>
         </div>
@@ -92,7 +92,7 @@ function App() {
         <Link to='/' className="navigation_link">
         <div className="App-mask-box" onMouseDown={mouseDown2} onMouseUp={mouseUp2}>
         
-        <img src={images[`a${number2}.png`]} />
+        <img src={images[`a${number2}.png`]} draggable="false" />
         
         </div>
         </Link>
@@ -100,7 +100,7 @@ function App() {
       <div className="App-body" >
         <ImageSwap number={number} />
         <div className="Mechanicel">
-          <p style={{padding: 0, margin: 0}}><img src={images[`mm${number2}.png`]} /></p>
+          <p style={{padding: 0, margin: 0}}><img src={images[`mm${number2}.png`]} draggable="false" /></p>
           <h1><span id="h1m1">&nbsp;Механи</span><span id="cEl" className="cEl">Кл</span></h1>
         </div>
       </div>
