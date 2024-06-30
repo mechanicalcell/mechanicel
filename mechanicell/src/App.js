@@ -48,14 +48,14 @@ function App() {
     document.getElementById('cL').innerText = 'En';
     document.getElementById('filmstrip').innerText = 'ДИАФИЛЬМ';
     document.getElementById('copy').innerText = copyRU;
-    document.getElementById("h1m1").innerText = ' Механи';
+    document.getElementById("h1m1").innerText = 'Механи';
     document.getElementById("cEl").innerText = 'Кл';    
  }
   const cFPRU = () => { 
     document.getElementById('cL').innerText = 'Ру';
     document.getElementById('filmstrip').innerText = 'FILMSTRIP';
     document.getElementById('copy').innerText = copyEN;
-    document.getElementById("h1m1").innerText = ' Mechani';
+    document.getElementById("h1m1").innerText = 'Mechani';
     document.getElementById("cEl").innerText = 'cEl';   
  
  }
@@ -101,7 +101,7 @@ function App() {
         <ImageSwap number={number} />
         <div className="Mechanicel">
           <p style={{padding: 0, margin: 0}}><img src={images[`mm${number2}.png`]} draggable="false" /></p>
-          <h1><span id="h1m1">&nbsp;Механи</span><span id="cEl" className="cEl">Кл</span></h1>
+          <h1><span id="h1m1">Механи</span><span id="cEl" className="cEl">Кл</span></h1>
         </div>
       </div>
 
