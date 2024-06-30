@@ -52,8 +52,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="App-box">
-        <img src={images[`FP.png`]} />
-         
+        <span className="fp">FILMSTRIP</span> 
         <div className="App-btn12">
           <div className="App-button1" onMouseDown={mouseDown} onMouseUp={mouseUp}>
             <img src={images[`b${button}.png`]} /> 
@@ -73,11 +72,14 @@ function App() {
       </header>   
       <div className="App-body" >
         <ImageSwap number={number} />
-        <img src={images[`mm${number2}.png`]} />
+        <div className="Mechanicel">
+          <p style={{padding: 0, margin: 0}}><img src={images[`mm${number2}.png`]} /></p>
+          <h1><span>&nbsp;Mechani</span><span className="cEl">cEl</span></h1>
+        </div>
       </div>
 
 
-      <div><p style={{textAlign: "center", fontFamily: "'Open Sans', sans-serif"}}><span style={{fontSize: "13px", color: "#8c755e"}}>&copy; &nbsp;2016 MechanicEl. &nbsp;All rights reserved.</span></p></div>
+      <div><p style={{textAlign: "center", fontFamily: "'Open Sans', sans-serif"}}><span style={{fontSize: "13px", color: "#5e5e5e"}}>&copy;&nbsp;&nbsp;2016&nbsp;MechanicEl.&nbsp;All&nbsp;rights&nbsp;reserved.</span></p></div>
 
     </div>
     </>
