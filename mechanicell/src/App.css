@@ -51,10 +51,19 @@ h1 {
 
 .App-language {
   font-weight: 100;
-  font-size: 12px;
+  font-size: 10px;
   cursor: pointer;
   width: 20px;
   margin-right: 20px;
+}
+
+.App-archive {
+  margin-right: 16px; 
+  cursor: pointer;
+}
+
+.App-about {
+  cursor: pointer;
 }
 
 .App-header {

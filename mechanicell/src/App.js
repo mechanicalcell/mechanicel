@@ -32,12 +32,19 @@ function App() {
   const [number, setNumber] = React.useState(0);
   const [number1, setNumber1] = React.useState(9);
   const [number2, setNumber2] = React.useState(1);
+  const [number3, setNumber3] = React.useState(1);
+  const [number4, setNumber4] = React.useState(1);
   const [button, setButton] = React.useState(11);
   const swap = () => { number <= 41 ? setNumber(number + 1) : setNumber(0) }
   const mouseDown = () => { setButton(12); swap() }
   const mouseUp = () => setButton(11)
   const mouseDown2 = () => { setNumber2(2);  }
   const mouseUp2 = () => setNumber2(1)
+  const mouseDown3 = () => { setNumber3(2);  }
+  const mouseUp3 = () => setNumber3(1)
+  const mouseDown4 = () => { setNumber4(2);  }
+  const mouseUp4 = () => setNumber4(1)
+
   const onClick = () => { number1 == 9 ? setNumber1(10) : setNumber1(9); }
 
   const copyRU = ' 2016 МеханиКл. Все права защищены.';
@@ -55,6 +62,10 @@ function App() {
   
   const cL = () => {
     'Ру' === state.l ? setState({ l: 'En', d: 'ДИАФИЛЬМ', m: 'Механи', c: 'Кл', copy:    copyRU }) : setState({ l: 'Ру', d: 'FILMSTRIP', m: 'Mechani', c: 'cEl', copy: copyEN })
+  }
+
+  const cB = () => {
+    
   }
 
   localStorage.setItem('state', JSON.stringify(state));
@@ -84,8 +95,12 @@ function App() {
         </div>
         </div>
 
-        <div className="App-language"  onClick={cL} >
+        <div className="App-language" onClick={cL} >
           <span id="cL">{state.l}</span> 
+        </div> 
+
+        <div className="App-archive" onMouseDown={mouseDown3} onMouseUp={mouseUp3} onClick={cB} >
+          <img src={images[`x${number3}.png`]} draggable="false" />
         </div> 
        
         <Link to='/' className="navigation_link">
@@ -99,7 +114,7 @@ function App() {
       <div className="App-body" >
         <ImageSwap number={number} />
         <div className="Mechanicel">
-          <p style={{padding: 0, margin: 0}}><img src={images[`mm${number2}.png`]} draggable="false" /></p>
+          <p className="App-about" onMouseDown={mouseDown4} onMouseUp={mouseUp4} style={{padding: 0, margin: 0}}><img src={images[`mm${number4}.png`]} draggable="false" /></p>
           <h1><span id="h1m1">{state.m}</span><span id="cEl" className="cEl">{state.c}</span></h1>
         </div>
       </div>
