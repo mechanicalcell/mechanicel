@@ -84,7 +84,7 @@ function App() {
         </div>
         </div>
 
-        <div className="App-language" style={{margin: "10px"}} onClick={cL} >
+        <div className="App-language"  onClick={cL} >
           <span id="cL">{state.l}</span> 
         </div> 
        
