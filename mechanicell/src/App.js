@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { useState } from 'react';
 
 function importAll(r) {
 
@@ -37,30 +38,28 @@ function App() {
   const mouseUp = () => setButton(11)
   const mouseDown2 = () => { setNumber2(2);  }
   const mouseUp2 = () => setNumber2(1)
-  const onClick = () => { number1 == 9 ? setNumber1(10) : setNumber1(9);                }
-  
+  const onClick = () => { number1 == 9 ? setNumber1(10) : setNumber1(9); }
+
   const copyRU = ' 2016 МеханиКл. Все права защищены.';
-  const copyEN = ' 2016 MechanicEl. All rights reserved.';
-  const copy = copyRU;
+  const copyEN = ' 2016 MechanicEl. All rights reserved.';  
 
-  const cL = () => { document.getElementById('cL').innerText === 'En' ?  cFPRU() : cFPEN() }
-  const cFPEN = () => { 
-    document.getElementById('cL').innerText = 'En';
-    document.getElementById('filmstrip').innerText = 'ДИАФИЛЬМ';
-    document.getElementById('copy').innerText = copyRU;
-    document.getElementById("h1m1").innerText = 'Механи';
-    document.getElementById("cEl").innerText = 'Кл';    
- }
-  const cFPRU = () => { 
-    document.getElementById('cL').innerText = 'Ру';
-    document.getElementById('filmstrip').innerText = 'FILMSTRIP';
-    document.getElementById('copy').innerText = copyEN;
-    document.getElementById("h1m1").innerText = 'Mechani';
-    document.getElementById("cEl").innerText = 'cEl';   
- 
- }
+  const savedState =  JSON.parse(localStorage.getItem('state'));
+
+  const [state, setState] = useState({
+    l: savedState ? savedState.l : 'En',
+    d: savedState ? savedState.d : 'ДИАФИЛЬМ',
+    m: savedState ? savedState.m : 'Механи',
+    c: savedState ? savedState.c : 'Кл',
+    copy: savedState ? savedState.copy : copyRU
+  });
   
+  const cL = () => {
+    'Ру' === state.l ? setState({ l: 'En', d: 'ДИАФИЛЬМ', m: 'Механи', c: 'Кл', copy:    copyRU }) : setState({ l: 'Ру', d: 'FILMSTRIP', m: 'Mechani', c: 'cEl', copy: copyEN })
+  }
 
+  localStorage.setItem('state', JSON.stringify(state));
+
+    
   useEffect(() => { if (number1 == 10) {
     const interval = setInterval(() => { 
       if (number >= 42) { setNumber(0); } else 
@@ -74,7 +73,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="App-box">
-        <span id="filmstrip" className="fp">ДИАФИЛЬМ</span> 
+        <span id="filmstrip" className="fp">{state.d}</span> 
         <div className="App-btn12">
           <div className="App-button1" onMouseDown={mouseDown} onMouseUp={mouseUp}>
             <img src={images[`b${button}.png`]} draggable="false" /> 
@@ -86,7 +85,7 @@ function App() {
         </div>
 
         <div className="App-language" style={{margin: "10px"}} onClick={cL} >
-          <span id="cL">En</span> 
+          <span id="cL">{state.l}</span> 
         </div> 
        
         <Link to='/' className="navigation_link">
@@ -101,12 +100,12 @@ function App() {
         <ImageSwap number={number} />
         <div className="Mechanicel">
           <p style={{padding: 0, margin: 0}}><img src={images[`mm${number2}.png`]} draggable="false" /></p>
-          <h1><span id="h1m1">Механи</span><span id="cEl" className="cEl">Кл</span></h1>
+          <h1><span id="h1m1">{state.m}</span><span id="cEl" className="cEl">{state.c}</span></h1>
         </div>
       </div>
 
 
-      <div><p style={{textAlign: "center", fontFamily: "'Open Sans', sans-serif"}}><span id="copy" style={{fontSize: "13px", color: "#5e5e5e", cursor: "default"}}>{copy}</span></p></div>
+      <div><p style={{textAlign: "center", fontFamily: "'Open Sans', sans-serif"}}><span id="copy" style={{fontSize: "13px", color: "#5e5e5e", cursor: "default"}}>{state.copy}</span></p></div>
 
     </div>
     </>
