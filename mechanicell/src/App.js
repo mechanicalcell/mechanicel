@@ -134,7 +134,7 @@ function App() {
       <div className={`${styles.app_body}`} >
         <ImageSwap number={number} />
         <div className={`${styles.mechanicel} ${languageAnimation.animation}`}>
-          <p className={`${styles.about} ${languageAnimation.animation}`} onMouseDown={mouseDown4} onMouseUp={mouseUp4} style={{padding: 0, margin: 0}}><img src={images[`icon${number4}.svg`]} alt="" draggable="false" /></p>
+          <p className={`${styles.app_about} ${languageAnimation.animation}`} onMouseDown={mouseDown4} onMouseUp={mouseUp4} ><img src={images[`icon${number4}.svg`]} alt="" draggable="false" /></p>
           <h1><span className={`${styles.h1m1} ${languageAnimation.animation}`} >{state.m}</span><span className={`${styles.cel} ${languageAnimation.animation}`}>{state.c}</span></h1>
         </div>
       </div>
