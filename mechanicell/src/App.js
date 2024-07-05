@@ -127,7 +127,7 @@ function App() {
         </div> 
         <Link to='/' className={`${styles.navigation_link}`}>
         <div className={`${styles.app_mask_box}`} onMouseDown={mouseDown2} onMouseUp={mouseUp2}>
-        <img src={images[`a${number2}.png`]} alt="" draggable="false" />
+        <img src={images[`a${number2}.png`]} alt=" " draggable="false" />
         </div>
         </Link>
       </header>   
