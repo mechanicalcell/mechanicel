@@ -1,34 +1,50 @@
 body {
   user-select: none;
+  cursor: default;
+  margin: 0; 
+  padding: 0;
 } 
 
 h1 {
   font-weight: 100;
   font-size: 25px;
-  color: #5e5e5e;
   text-align: center;
   font-family: Helvetica, 'Open Sans', sans-serif;
+  padding-top: 15px;
+  padding-bottom: 1px;
+}
+
+.screen {
+	display: block;
 }
 
 .copy:before { 
   content: '\A9'; 
 }
 
-.h1m1:before { 
-  content: '\A0'; 
-}
-
-.cel {
-  color: color(srgb 0.4522 0.5938 0.7756);
-  cursor: default;
+.copy {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px; 
+  color: #5e5e5e;
 }
 
 .mechanicel {
   display: flex;
   flex-direction: row;
   align-items: center;  
-  margin: 0;
-  cursor: default;
+}
+
+.mechani {
+  color: #5e5e5e;
+}
+
+.mechani:before { 
+  content: '\A0'; 
+}
+
+.cel {
+  color: color(srgb 0.4522 0.5938 0.7756);
 }
 
 .fp {
@@ -38,15 +54,6 @@ h1 {
   color: #5e5e5e;
   text-align: center;
   margin-bottom: 10px;
-  cursor: default;
-}
-
-.copy {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13px; 
-  color: #5e5e5e;
-  cursor: default;
 }
 
 .an {
@@ -68,6 +75,8 @@ h1 {
 
 .app {
   text-align: center;
+  margin: 0px; 
+  padding: 0px;
 }
 
 .app_language {
@@ -83,10 +92,11 @@ h1 {
   cursor: pointer;
 }
 
-.app_about {
+.about {
+  display: inline;
   cursor: pointer;
-  padding: 0;
-  margin: 0;
+  width: 15px;
+  height: 15px;
 }
 
 .app_header {
@@ -104,8 +114,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .app_button1 {
@@ -140,19 +148,8 @@ h1 {
   margin-right: 740px;
 }
 
-.content {
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .navigation_link {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.app_image_swap {
-  margin-bottom: 10px; 
 }

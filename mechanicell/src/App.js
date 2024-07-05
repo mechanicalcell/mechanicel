@@ -19,7 +19,7 @@ const ImageSwap = (number) => {
 
   return (
     <div className={`${styles.app_image_swap}`}>
-      <img src={images[`m${number.number}.png`]} alt={number.number} draggable="false" /> 
+      <img className={styles.screen} src={images[`m${number.number}.png`]} alt={number.number} draggable="false" /> 
     </div>
   )
 
@@ -70,25 +70,25 @@ function App() {
   const [state, setState] = useState({
     l: savedState ? savedState.l : 'En',
     d: savedState ? savedState.d : 'ДИАФИЛЬМ',
-    m: savedState ? savedState.m : 'Механи',
+    mechani: savedState ? savedState.mechani : 'Механи',
     c: savedState ? savedState.c : 'Кл',
     copy: savedState ? savedState.copy : copyRU
   });
 
   const changeL = `${styles.app_language} ` === `${styles.app_language} ${languageAnimation.animation}`;
 
-  const cL = () => { 
+  const cL = () => {
     if (changeL) {
       cB();
       'Ру' === state.l ? setState({ 
         l: 'En', 
         d: 'ДИАФИЛЬМ', 
-        m: 'Механи', 
+        mechani: 'Механи', 
         c: 'Кл', 
         copy: copyRU }) : setState({ 
           l: 'Ру', 
           d: 'FILMSTRIP', 
-          m: 'Mechani', 
+          mechani: 'Mechani', 
           c: 'cEl', 
           copy: copyEN });
     }
@@ -134,8 +134,11 @@ function App() {
       <div className={`${styles.app_body}`} >
         <ImageSwap number={number} />
         <div className={`${styles.mechanicel} ${languageAnimation.animation}`}>
-          <p className={`${styles.app_about} ${languageAnimation.animation}`} onMouseDown={mouseDown4} onMouseUp={mouseUp4} ><img src={images[`icon${number4}.svg`]} alt="" draggable="false" /></p>
-          <h1><span className={`${styles.h1m1} ${languageAnimation.animation}`} >{state.m}</span><span className={`${styles.cel} ${languageAnimation.animation}`}>{state.c}</span></h1>
+          <h1>
+            <img className={`${styles.about} ${languageAnimation.animation}`} onMouseDown={mouseDown4} onMouseUp={mouseUp4} src={images[`icon${number4}.svg`]} alt="logo" draggable="false" />
+            <span className={`${styles.mechani} ${languageAnimation.animation}`}>{state.mechani}</span>
+            <span className={`${styles.cel} ${languageAnimation.animation}`}>{state.c}</span>
+          </h1>
         </div>
       </div>
       <div><p><span className={`${styles.copy} ${languageAnimation.animation}`}>{state.copy}</span></p></div>
@@ -143,6 +146,7 @@ function App() {
     </>
     </Router>
   );
+
 }
 
 export default App;
