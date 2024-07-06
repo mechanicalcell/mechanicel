@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './app.module.css';
+import AppHeader from '../app-header/app-header';
 
 const importAll = (r) => {
 
@@ -15,7 +15,7 @@ const importAll = (r) => {
 
 const ImageSwap = (number) => {
 
-  const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+  const images = importAll(require.context('../../images', false, /\.(png|jpe?g|svg)$/));
 
   return (
     <div className={`${styles.app_image_swap}`}>
@@ -27,7 +27,7 @@ const ImageSwap = (number) => {
 
 function App() {
 
-  const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+  const images = importAll(require.context('../../images', false, /\.(png|jpe?g|svg)$/));
 
   const [number, setNumber] = useState(0);
   const [number1, setNumber1] = useState(9);
@@ -75,6 +75,8 @@ function App() {
     copy: savedState ? savedState.copy : copyRU
   });
 
+  if (state) { localStorage.setItem('state', JSON.stringify(state)); };
+ 
   const changeL = `${styles.app_language} ` === `${styles.app_language} ${languageAnimation.animation}`;
 
   const cL = () => {
@@ -94,8 +96,6 @@ function App() {
     }
   }
 
-  localStorage.setItem('state', JSON.stringify(state));
-    
   useEffect(() => { if (number1 === 10) {
     const interval = setInterval(() => { 
       if (number >= 42) { setNumber(0); } else 
@@ -105,32 +105,24 @@ function App() {
   } else return }, [number1, number]);
 
   return (
-    <Router><>
-    <div className={`${styles.app}`} >
-      <header className={`${styles.app_header}`} >
-        <div className={`${styles.app_box}`} >
-        <span className={`${styles.fp} ${languageAnimation.animation}`} >{state.fp}</span> 
-        <div className={`${styles.app_btn12}`} >
-          <div className={`${styles.app_button1}`} onMouseDown={mouseDown} onMouseUp={mouseUp} >
-            <img src={images[`b${button}.png`]} alt="" draggable="false" /> 
-          </div> 
-          <div className={`${styles.app_button2}`} onClick={onClick} >
-            <img src={images[`b${number1}.png`]} alt="" draggable="false" /> 
-          </div> 
-        </div>
-        </div>
-        <div className={`${styles.app_language} ${languageAnimation.animation}`} onClick={cL} >
-          <span>{state.lang}</span> 
-        </div> 
-        <div className={`${styles.app_archive}`} onMouseDown={mouseDown3} onMouseUp={mouseUp3} >
-          <img src={images[`x${number3}.png`]} alt="" draggable="false" />
-        </div> 
-        <Link to='/' className={`${styles.navigation_link}`}>
-        <div className={`${styles.app_mask_box}`} onMouseDown={mouseDown2} onMouseUp={mouseUp2}>
-        <img src={images[`a${number2}.png`]} alt=" " draggable="false" />
-        </div>
-        </Link>
-      </header>   
+    <Router>
+      <>
+      <AppHeader 
+        languageAnimation={languageAnimation} 
+        state={state} 
+        mouseDown={mouseDown} 
+        mouseUp={mouseUp} 
+        images={images}
+        button={button}
+        onClick={onClick}
+        number1={number1}
+        cL={cL}
+        mouseDown3={mouseDown3}
+        mouseUp3={mouseUp3}
+        number3={number3}
+        mouseDown2={mouseDown2}
+        mouseUp2={mouseUp2}
+        number2={number2} />
       <div className={`${styles.app_body}`} >
         <ImageSwap number={number} />
         <div className={`${styles.mechanicel} ${languageAnimation.animation}`}>
@@ -142,8 +134,7 @@ function App() {
         </div>
       </div>
       <div><p><span className={`${styles.copy} ${languageAnimation.animation}`}>{state.copy}</span></p></div>
-    </div>
-    </>
+      </>
     </Router>
   );
 
