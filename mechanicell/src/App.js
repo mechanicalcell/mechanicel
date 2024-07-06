@@ -68,10 +68,10 @@ function App() {
   const savedState =  JSON.parse(localStorage.getItem('state'));
 
   const [state, setState] = useState({
-    l: savedState ? savedState.l : 'En',
-    d: savedState ? savedState.d : 'ДИАФИЛЬМ',
+    lang: savedState ? savedState.lang : 'En',
+    fp: savedState ? savedState.fp : 'ДИАФИЛЬМ',
     mechani: savedState ? savedState.mechani : 'Механи',
-    c: savedState ? savedState.c : 'Кл',
+    cel: savedState ? savedState.cel : 'Кл',
     copy: savedState ? savedState.copy : copyRU
   });
 
@@ -80,16 +80,16 @@ function App() {
   const cL = () => {
     if (changeL) {
       cB();
-      'Ру' === state.l ? setState({ 
-        l: 'En', 
-        d: 'ДИАФИЛЬМ', 
+      'Ру' === state.lang ? setState({ 
+        lang: 'En', 
+        fp: 'ДИАФИЛЬМ', 
         mechani: 'Механи', 
-        c: 'Кл', 
+        cel: 'Кл', 
         copy: copyRU }) : setState({ 
-          l: 'Ру', 
-          d: 'FILMSTRIP', 
+          lang: 'Ру', 
+          fp: 'FILMSTRIP', 
           mechani: 'Mechani', 
-          c: 'cEl', 
+          cel: 'cEl', 
           copy: copyEN });
     }
   }
@@ -109,7 +109,7 @@ function App() {
     <div className={`${styles.app}`} >
       <header className={`${styles.app_header}`} >
         <div className={`${styles.app_box}`} >
-        <span className={`${styles.fp} ${languageAnimation.animation}`} >{state.d}</span> 
+        <span className={`${styles.fp} ${languageAnimation.animation}`} >{state.fp}</span> 
         <div className={`${styles.app_btn12}`} >
           <div className={`${styles.app_button1}`} onMouseDown={mouseDown} onMouseUp={mouseUp} >
             <img src={images[`b${button}.png`]} alt="" draggable="false" /> 
@@ -120,7 +120,7 @@ function App() {
         </div>
         </div>
         <div className={`${styles.app_language} ${languageAnimation.animation}`} onClick={cL} >
-          <span>{state.l}</span> 
+          <span>{state.lang}</span> 
         </div> 
         <div className={`${styles.app_archive}`} onMouseDown={mouseDown3} onMouseUp={mouseUp3} >
           <img src={images[`x${number3}.png`]} alt="" draggable="false" />
@@ -137,7 +137,7 @@ function App() {
           <h1>
             <img className={`${styles.about} ${languageAnimation.animation}`} onMouseDown={mouseDown4} onMouseUp={mouseUp4} src={images[`icon${number4}.svg`]} alt="logo" draggable="false" />
             <span className={`${styles.mechani} ${languageAnimation.animation}`}>{state.mechani}</span>
-            <span className={`${styles.cel} ${languageAnimation.animation}`}>{state.c}</span>
+            <span className={`${styles.cel} ${languageAnimation.animation}`}>{state.cel}</span>
           </h1>
         </div>
       </div>
