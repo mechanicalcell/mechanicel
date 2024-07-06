@@ -19,7 +19,7 @@ const ImageSwap = (number) => {
 
   return (
     <div className={`${styles.app_image_swap}`}>
-      <img className={styles.screen} src={images[`m${number.number}.png`]} alt={number.number} draggable="false" /> 
+      <img className={styles.screen} src={images[`m${number.number}.png`]} alt="" draggable="false" /> 
     </div>
   )
 
