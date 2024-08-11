@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+}
+
+.copy:before { 
+  content: '\A9'; 
+}
+
+.copy {
+  font-family: Helvetica, 'Open Sans', sans-serif;
+  font-size: 12px; 
+  font-weight: 100;
+  color: #5e5e5e;
+}

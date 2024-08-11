@@ -1,51 +1,24 @@
 import styles from './app-header.module.css';
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-export default function AppHeader({ languageAnimation,
-                                    state,
-                                    mouseDown,
-                                    mouseUp,
-                                    images,
-                                    button,
-                                    onClick,
-                                    number1,
-                                    cL,
-                                    mouseDown3,
-                                    mouseUp3,
-                                    number3,
-                                    mouseDown2,
-                                    mouseUp2,
-                                    number2 }) {
-
+export default function AppHeader({ languageAnimation, state, images, style, addStyle, changeLanguage }) {
+  const { pathname } = useLocation(); 
   return (
     <>
-      <header className={`${styles.app_header}`} >
-        <div className={`${styles.panel}`}>
-          <div className={`${styles.app_box}`} >
-          <span className={`${styles.fp} ${languageAnimation.animation}`} >{state.fp}</span> 
-          <div className={`${styles.app_btn12}`} >
-            <div className={`${styles.app_button1}`} onMouseDown={mouseDown} onMouseUp={mouseUp} >
-              <img src={images[`b${button}.png`]} alt="" draggable="false" /> 
-            </div> 
-            <div className={`${styles.app_button2}`} onClick={onClick} >
-              <img src={images[`b${number1}.png`]} alt="" draggable="false" /> 
-            </div> 
-          </div>
-          </div>
-          <div className={`${styles.app_box_right}`}>
-          <div className={`${styles.app_language} ${languageAnimation.animation}`} onClick={cL} >
-            <span>{state.lang}</span> 
-          </div> 
-          <div className={`${styles.app_archive}`} onMouseDown={mouseDown3} onMouseUp={mouseUp3} >
-            <img src={images[`x${number3}.png`]} alt="" draggable="false" />
-          </div> 
-          <Link to='/' className={`${styles.navigation_link}`}>
-          <div className={`${styles.app_mask_box}`} onMouseDown={mouseDown2} onMouseUp={mouseUp2}>
-          <img src={images[`a${number2}.png`]} alt=" " draggable="false" />
-          </div>
-          </Link>
-          </div>
-        </div>
+      <header className={styles.header}>
+        <nav className={styles.panel}>
+          <div className={styles.stopper}></div>
+          <NavLink to='/' className={({ isActive }) => isActive ? `${styles.mechanicel} ${languageAnimation.animation} ${style.home} active` : `${styles.mechanicel} ${style.home}`} onMouseOver={() => addStyle({ home: styles.element_background_color, archive: '', user: '' })} onMouseOut={() => addStyle({ home: '', archive: '', user: '' })} onMouseDown={() => addStyle({ home: styles.element_background_color, archive: '', user: '' })} onMouseUp={() => addStyle({ home: '', archive: '', user: '' })} onTouchStart={() => addStyle({ home: styles.element_background_color, archive: '', user: '' })} onTouchEnd={() => addStyle({ home: '', archive: '', user: '' })} onClick={() => changeLanguage(pathname)}>  
+            {({ isActive }) => <>{state.mechani}<span className={isActive ? styles.cel : ''}>{state.cel}</span></>}
+          </NavLink>
+          <NavLink to='/archive' className={`${styles.archive} ${style.archive}`} onMouseOver={() => addStyle({ home: '', archive: styles.element_background_color, user: '' })} onMouseOut={() => addStyle({ home: '', archive: '', user: '' })} onMouseDown={() => addStyle({ home: '', archive: styles.element_background_color, user: '' })} onMouseUp={() => addStyle({ home: '', archive: '', user: '' })} onTouchStart={() => addStyle({ home: '', archive: styles.element_background_color, user: '' })} onTouchEnd={() => addStyle({ home: '', archive: '', user: '' })}>
+            {({ isActive }) => <><img src={images[`a${isActive ? 2 : 1}.png`]} alt={`archive ${isActive ? 2 : 1}`} draggable="false" /></>}
+          </NavLink> 
+          <NavLink to='/login' className={`${styles.user} ${style.user}`} onMouseOver={() => addStyle({ home: '', archive: '', user: styles.element_background_color })} onMouseOut={() => addStyle({ home: '', archive: '', user: '' })} onMouseDown={() => addStyle({ home: '', archive: '', user: styles.element_background_color })} onMouseUp={() => addStyle({ home: '', archive: '', user: '' })} onTouchStart={() => addStyle({ home: '', archive: '', user: styles.element_background_color })} onTouchEnd={() => addStyle({ home: '', archive: '', user: '' })}>
+            {({ isActive }) => <><img src={images[`u${isActive ? 2 : 1}.png`]} alt={`user ${isActive ? 2 : 1}`} draggable="false" /></>}
+          </NavLink>
+          <div className={styles.stopper}></div>
+        </nav>
       </header>   
     </>
   )

@@ -1,73 +1,43 @@
-html {
+* {
   overflow: hidden;
-}
-
-body {
-  user-select: none;
   cursor: default;
-  margin: 0; 
-  padding: 0;
-  text-align: center;
-} 
-
-h1 {
-  font-weight: 100;
-  font-size: 25px;
-  text-align: center;
-  font-family: Helvetica, 'Open Sans', sans-serif;
-  padding-top: 16px;
+  user-select: none;
 }
 
-.screen {
-	display: block;
-}
-
-.app_body {
-  min-height: 74vh; 
-   /* min-height: 200px; */
+.main {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 80px - 24px);
+  min-height: calc(320px - 80px - 24px); 
+  min-width: 320px;
   align-items: center;
-  justify-content: center;
 }
 
-.mechanicel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;  
-}
-
-.about {
-  display: inline;
-  cursor: pointer;
-  width: 15px;
-  height: 15px;
-}
-
-.mechani {
+.h2 {
+  margin-bottom: 0;
   color: #5e5e5e;
+  font-family: Helvetica, 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 100;
 }
 
-.mechani:before { 
+.h2 svg:after { 
   content: '\A0'; 
 }
 
-.cel {
-  color: color(srgb 0.4522 0.5938 0.7756);
+.rotary_switch {
+  position: fixed;
+  top: 102px;
+  left: 22px;
 }
 
-.copy:before { 
-  content: '\A9'; 
+.toggle_switch {
+  position: fixed;
+  top: 102px;
+  right: 22px;
 }
 
-.copy {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13px; 
-  color: #5e5e5e;
-}
-
-.an {
+.animation {
   animation-name: text;
   animation-duration: .2s; 
   animation-delay: .3s; 
