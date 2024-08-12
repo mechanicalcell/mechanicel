@@ -11,6 +11,7 @@
   min-height: calc(320px - 80px - 24px); 
   min-width: 320px;
   align-items: center;
+  z-index: 1;
 }
 
 .h2 {
@@ -25,16 +26,42 @@
   content: '\A0'; 
 }
 
-.rotary_switch {
+.control_panel {
   position: fixed;
-  top: 102px;
-  left: 22px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+}
+
+.control_panel_index {
+  z-index: 1;
+}
+
+.rotary_switch {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
 }
 
 .toggle_switch {
-  position: fixed;
-  top: 102px;
-  right: 22px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.main img {
+  z-index: 0;
+}
+
+.element_background_color {
+  background-color: rgba(221, 240, 251, 0.5);
 }
 
 .animation {
