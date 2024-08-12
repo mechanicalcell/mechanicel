@@ -113,10 +113,10 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename="/MechanicEl">
         <AppHeader languageAnimation={languageAnimation} state={state} images={images} style={style} addStyle={addStyle} changeLanguage={changeLanguage} />
         <Routes>
-          <Route path="/" element={<Main><Home images={images} numberPicture={numberPicture} languageAnimation={languageAnimation} state={state} styles={styles} mouseDown={mouseDown} mouseUp={mouseUp} onClick={onClick} rotarySwitch={rotarySwitch} toggleSwitch={toggleSwitch} switchStyle={switchStyle} addSwitchStyle={addSwitchStyle} controlPanelStyle={controlPanelStyle} addControlPanelStyle={addControlPanelStyle} /></Main>} />
+          <Route path="/" exact={true} element={<Main><Home images={images} numberPicture={numberPicture} languageAnimation={languageAnimation} state={state} styles={styles} mouseDown={mouseDown} mouseUp={mouseUp} onClick={onClick} rotarySwitch={rotarySwitch} toggleSwitch={toggleSwitch} switchStyle={switchStyle} addSwitchStyle={addSwitchStyle} controlPanelStyle={controlPanelStyle} addControlPanelStyle={addControlPanelStyle} /></Main>} />
           <Route path="/archive" exact={true} element={<Main><ArchivePage /></Main>} />
           <Route path="/login" exact={true} element={<Main><LoginPage /></Main>} />
         </Routes>
