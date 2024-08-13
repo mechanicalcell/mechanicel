@@ -23,7 +23,7 @@ const Home = ({ images, numberPicture, languageAnimation, state, styles, mouseDo
           <img src={images[`t${toggleSwitch}.png`]} alt={`toggle switch ${toggleSwitch}`} draggable="false" /> 
         </div> 
       </div>
-      <img src={images[`f${numberPicture}.png`]} alt={`filmstrip ${numberPicture}`} draggable="false" onMouseOver={() => addControlPanelStyle({ controlPanel: styles.control_panel_index })} onMouseOut={() => addControlPanelStyle({ controlPanel: '' })} /> 
+      <img className={styles.filmstrip} src={images[`f${numberPicture}.png`]} alt={`filmstrip ${numberPicture}`} draggable="false" onMouseOver={() => addControlPanelStyle({ controlPanel: styles.control_panel_index })} onMouseOut={() => addControlPanelStyle({ controlPanel: '' })} /> 
       <h2 className={`${styles.h2} ${languageAnimation.animation}`}>
         <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
           <rect fill="none" stroke="#9f9f9f" height="13" width="13" x="0.5" y="0.5" viewBox="0 0 14 14" />
