@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MechanicEl/static/css/main.86796bca.css",
+    "main.css": "/MechanicEl/static/css/main.843c48a8.css",
     "main.js": "/MechanicEl/static/js/main.747d0c39.js",
     "static/js/787.bb1ca9fe.chunk.js": "/MechanicEl/static/js/787.bb1ca9fe.chunk.js",
     "index.html": "/MechanicEl/index.html",
-    "main.86796bca.css.map": "/MechanicEl/static/css/main.86796bca.css.map",
+    "main.843c48a8.css.map": "/MechanicEl/static/css/main.843c48a8.css.map",
     "main.747d0c39.js.map": "/MechanicEl/static/js/main.747d0c39.js.map",
     "787.bb1ca9fe.chunk.js.map": "/MechanicEl/static/js/787.bb1ca9fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.86796bca.css",
+    "static/css/main.843c48a8.css",
     "static/js/main.747d0c39.js"
   ]
 }
