@@ -1,2 +1,2 @@
 # MechanicEl
-https://mechanicell.github.io/MechanicEl/
+https://mechanicalcell.github.io/mechanicel/
