@@ -1,2 +1,2 @@
 # mechanicel
-https://mechanicalcell.github.io/mechanicel/
+https://mechanicel.com
