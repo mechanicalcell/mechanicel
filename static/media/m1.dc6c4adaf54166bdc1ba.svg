@@ -1,0 +1,18 @@
+<svg height="22" width="138" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .mechani {
+      font-family: Helvetica, 'Open Sans', sans-serif;
+      font-size: 25px;
+      font-weight: 100;
+      fill: #5e5e5e;  
+    }
+    .cel {
+      font-family: Helvetica, 'Open Sans', sans-serif;
+      font-size: 25px;
+      font-weight: 100;
+      fill: color(srgb 0.4522 0.5938 0.7756);
+    }
+  </style>
+    <text x="5" y="20" class="mechani">Mechani</text>
+    <text x="101" y="20" class="cel">cel</text>
+</svg>
