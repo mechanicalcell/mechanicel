@@ -42,14 +42,6 @@
   align-items: center;
 }
 
-.user {
-  display: flex;
-  width: 44px;
-  height: 44px;
-  justify-content: center;
-  align-items: center;
-}
-
 .element_background_color {
   background-color: rgba(221, 240, 251, 0.5);
 }

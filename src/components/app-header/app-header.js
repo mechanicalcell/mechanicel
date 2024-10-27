@@ -14,9 +14,6 @@ export default function AppHeader({ languageAnimation, state, images, style, add
           <NavLink to='/archive' className={`${styles.archive} ${style.archive}`} onMouseOver={() => addStyle({ home: '', archive: styles.element_background_color, user: '' })} onMouseOut={() => addStyle({ home: '', archive: '', user: '' })} onMouseDown={() => addStyle({ home: '', archive: styles.element_background_color, user: '' })} onMouseUp={() => addStyle({ home: '', archive: '', user: '' })} onTouchStart={() => addStyle({ home: '', archive: styles.element_background_color, user: '' })} onTouchEnd={() => addStyle({ home: '', archive: '', user: '' })}>
             {({ isActive }) => <><img src={images[`a${isActive ? 2 : 1}.png`]} alt={`archive ${isActive ? 2 : 1}`} draggable="false" /></>}
           </NavLink> 
-          <NavLink to='/login' className={`${styles.user} ${style.user}`} onMouseOver={() => addStyle({ home: '', archive: '', user: styles.element_background_color })} onMouseOut={() => addStyle({ home: '', archive: '', user: '' })} onMouseDown={() => addStyle({ home: '', archive: '', user: styles.element_background_color })} onMouseUp={() => addStyle({ home: '', archive: '', user: '' })} onTouchStart={() => addStyle({ home: '', archive: '', user: styles.element_background_color })} onTouchEnd={() => addStyle({ home: '', archive: '', user: '' })}>
-            {({ isActive }) => <><img src={images[`u${isActive ? 2 : 1}.png`]} alt={`user ${isActive ? 2 : 1}`} draggable="false" /></>}
-          </NavLink>
           <div className={styles.stopper}></div>
         </nav>
       </header>   
